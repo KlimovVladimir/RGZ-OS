@@ -1,0 +1,168 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#include <stdlib.h>
+#include <queue>
+#include <Math.hpp>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+STARTUPINFO sinfo = {0};
+PROCESS_INFORMATION pinfo= {0};
+std::queue<HANDLE> hp;
+int max;
+int i = 0;
+int l;
+String num1;
+String num2;
+LPTSTR cmdArgs;
+DWORD lpExitCode = 0;
+HANDLE hh;
+
+String win;
+LPTSTR cmdArg;
+HWND hWnd;
+
+MSG msg;
+
+
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+DWORD CALLBACK ThreadFunc1(void* P)
+{
+ for(;;)
+	{
+		if(i==max)
+		{
+			for(int p=0;p<i;p++)
+			{
+				if(!hp.empty())
+				{
+					hh = hp.front();
+					GetExitCodeProcess(hh, &lpExitCode);
+					if (lpExitCode != STILL_ACTIVE)
+					{
+
+						CloseHandle(hh);
+						hp.pop();
+
+						num1 = String(p);
+						l = RandomRange(3,10);
+						num2 = String(l);
+						num1 +=";"+num2;
+						cmdArgs = (LPTSTR)num1.c_str();
+						CreateProcess(L"E:\\NSTU\\ÀÂÒÔ\\2 êóðñ\\ÎÑ\\ÏÎÌÎÉÊÀ ÄËß ÁÈËÄÅÐÀ\\ÐÃÇ\\Win32\\Debug\\Project2.exe",
+						cmdArgs, NULL, NULL, false, 0, NULL, NULL, &sinfo, &pinfo);
+						CloseHandle(pinfo.hThread);
+						hp.push(pinfo.hProcess);
+
+					}
+					else
+					{
+
+						hp.pop();
+						hp.push(hh);
+					}
+
+				}
+
+			}
+		}
+
+
+	}
+
+return 0;
+}
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	AnsiString fpath = "E:\\NSTU\\ÀÂÒÔ\\2 êóðñ\\ÎÑ\\ÏÎÌÎÉÊÀ ÄËß ÁÈËÄÅÐÀ\\ÐÃÇ\\Win32\\Debug\\Project2.exe";
+
+	 //max = StrToInt(Edit1->Text);
+	 //i = 0;
+	 /*i = 0;
+	 num1 = String(i);
+	 l = 0;
+	 num2 = String(l);
+	num1 +=";"+num2;
+	 cmdArgs = (LPTSTR)num1.c_str();
+	Label1->Caption =  IntToStr(i);
+	Label1->Caption =  num1; */
+
+		while(i<max)
+		{
+		num1 = String(i);
+		l = RandomRange(3,10);
+		num2 = String(l);
+		num1 +=";"+num2;
+		cmdArgs = (LPTSTR)num1.c_str();
+			CreateProcess(L"E:\\NSTU\\ÀÂÒÔ\\2 êóðñ\\ÎÑ\\ÏÎÌÎÉÊÀ ÄËß ÁÈËÄÅÐÀ\\ÐÃÇ\\Win32\\Debug\\Project2.exe",
+			cmdArgs, NULL, NULL, false, 0, NULL, NULL, &sinfo, &pinfo);
+			CloseHandle(pinfo.hThread);
+			hp.push(pinfo.hProcess);
+
+			i++;
+		}
+	HANDLE hThread = CreateThread(0,0,ThreadFunc1,0,0,NULL);
+
+}
+
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Edit1Change(TObject *Sender)
+{
+	 max = StrToInt(Edit1->Text);
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+			for(int p=0;p<i;p++)
+			{
+				//if(!hp.empty())
+				{
+					//hh = hp.front();
+					//COPYDATASTRUCT cd;
+				   //	AnsiString sBuffer = "Second";
+				   //	cd.lpData=&sBuffer;
+					//cd.cbData= sBuffer.Length();
+					win = String(p);
+					cmdArg = (LPTSTR)win.c_str();
+					hWnd = FindWindow(NULL, cmdArg);
+
+					//SendMessage(hWnd,WM_COPYDATA, 0, (LPARAM) &cd);
+					PostMessage (hWnd,3000, 0, 0);
+
+					//hp.pop();
+					//hp.push(hh);
+
+				}
+
+			}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+					//COPYDATASTRUCT cd;
+					UnicodeString MyStr  = "Second";
+					//cd.lpData=&sBuffer;
+					//cd.cbData= sBuffer.Length();
+					//String win = String(0);
+					//LPTSTR cmdArgs = (LPTSTR)win.c_str();
+					HWND hWnd = FindWindow(NULL, L"0");
+
+					PostMessage (hWnd,3000, 0, 0);
+}
+//---------------------------------------------------------------------------
+

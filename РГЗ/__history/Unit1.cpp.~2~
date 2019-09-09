@@ -1,0 +1,43 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#include <stdlib.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+STARTUPINFO sinfo = {0};
+PROCESS_INFORMATION pinfo= {0};
+
+
+
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	AnsiString fpath = "E:\\NSTU\\юбрт\\2 ЙСПЯ\\ня\\онлнийю дкъ ахкдепю\\пцг\\Win32\\Debug\\Project2.exe";
+
+	int i = 3;
+	char num[2];
+	itoa(i, num, 2);
+	int l = 10;
+	char num2[2];
+	itoa(l, num2, 2);
+	//Label1->Caption =  num;
+
+
+	 //CopyMemory(num, num2,3);
+	//LPTSTR cmdArgs = L"\"E:\\NSTU\\юбрт\\2 ЙСПЯ\\ня\\онлнийю дкъ ахкдепю\\пцг\\Win32\\Debug\\Project2.exe\"" ;
+	 LPTSTR cmdArgs = (LPTSTR)num;
+	 Label1->Caption =  IntToStr(l);;
+	//CreateProcess(L"E:\\NSTU\\юбрт\\2 ЙСПЯ\\ня\\онлнийю дкъ ахкдепю\\пцг\\Win32\\Debug\\Project2.exe", cmdArgs, NULL, NULL, false, 0, NULL, NULL, &sinfo, &pinfo);
+
+}
+//---------------------------------------------------------------------------

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.850,E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Sender.h=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.850,E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Sender.cpp=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.293,=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.735,=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.850,E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Sender.dfm=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.068,E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Project1PCH1.h=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.242,E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Unit1.cpp=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.437,E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Project1.cbproj=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.242,E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Unit1.dfm=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.242,E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\РГЗ\Unit1.h=E:\NSTU\АВТФ\2 курс\ОС\ПОМОЙКА ДЛЯ БИЛДЕРА\Unit1.h</Transaction>
+  </Transactions>
+</BorlandProject>

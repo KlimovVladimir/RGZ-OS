@@ -1,0 +1,37 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#include <string.h>
+#include <stdio.h>
+#pragma hdrstop
+
+#include "Unit2.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm2 *Form2;
+
+//---------------------------------------------------------------------------
+__fastcall TForm2::TForm2(TComponent* Owner)
+	: TForm(Owner)
+{
+   //	num =  (char*)lpCmdLine;
+	//Label1->Caption =  num;
+	//num = GetCommandLine();
+	num = L"12;34";
+	 char* istr1 ;
+	 char* istr2;
+	istr1 = std::strtok ((char*)num,";");
+	Form2->Caption =  istr1;
+	istr1 = std::strtok (NULL,";");
+	Label1->Caption =  istr1;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::Timer1Timer(TObject *Sender)
+{
+	  //num = GetCommandLine();
+
+	 // Label1->Caption =  num;
+	 // Form2->Caption =  num;
+}
+//---------------------------------------------------------------------------
